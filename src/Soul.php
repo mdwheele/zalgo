@@ -67,4 +67,9 @@ final class Soul
 
         return $bool;
     }
+
+    public function unleash()
+    {
+        return array_flatten($this->soul);
+    }
 } 

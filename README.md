@@ -82,6 +82,16 @@ echo $zalgo->speaks('the magic quotes they are coming for me I live only days');
   t̹ͬhe ͙̫ͪm̭̓a̘̬g̉i̔c͉͕ͣ ͍q̗̥ṳo͎̳t̥é̳͇s̯ ̟̈th̩͎ͪey̯̰ͭ ̝̬̀a̱r͎̓e̥͇ c͔om̔ỉ̘ng̖̞̓ f̲o̾r̳̗ m̪͙e ̗̜ͯÍ͙ ̥̞l̝͓i̝̔v̭e̞ o̺nͮl̘y ͔̙̓d̯a͎͒y̔s͓̣̐
 ```
 
+### Zalgo soothes a previous prophecy
+
+Yeah... no role-playing here. Sometimes folks get really freaking annoyed at Zalgo text and this 
+package gives you a way to clean prophecies spoken by **this** package, at least. Most implementations 
+are the same as this (or use the same unicode character set) so it should work.
+
+``` php
+$cleanText = $zalgo->soothe($prophecy);  // Where prophecy is that crazy-looking stuff above.
+```
+
 ## Testing
 
 ``` bash

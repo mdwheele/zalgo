@@ -47,7 +47,28 @@ final class Zalgo
         return $this->whisper;
     }
 
-    private function biteTongueOnTwitter($phrase)
+    /**
+     * Zalgo decides to soothe a prophecy to return the original
+     * phrase back to caller.
+     *
+     * @param string $prophecy Zalgo-text!
+     *
+     * @return string soothed prophecy text.
+     */
+    public function soothe($prophecy)
+    {
+        return str_replace($this->soul->unleash(), '', $prophecy);
+    }
+
+    /**
+     * Hacky implementation detail to clamp Zalgo text to 140 characters
+     * when it is in a mood for Twitter.
+     *
+     * @param $phrase
+     *
+     * @return string
+     */
+    protected function biteTongueOnTwitter($phrase)
     {
         if (mb_strlen($this->whisper) <= 140) {
             return $this->whisper;

@@ -58,7 +58,7 @@ final class Mood
             case 'twitter':
                 return [
                     'up' => rand(0, 1),
-                    'down' => rand(0, 2),
+                    'down' => rand(0, 1),
                     'mid' => rand(0, 0),
                 ];
                 break;

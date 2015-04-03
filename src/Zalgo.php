@@ -86,21 +86,23 @@ final class Zalgo
          */
 
         $phraseLength = mb_strlen($phrase);
-        $numberToRemove = (int) ceil(abs($phraseLength - (140 / 2.75)));
+        $numberToRemove = (int) ceil(abs($phraseLength - (140 / 3)));
         $removed = 0;
 
         $words = preg_split('/\s+/', $phrase);
 
-        while ($removed <= $numberToRemove) {
+        while ($removed < $numberToRemove) {
             foreach ($words as $index => $word) {
                 if (mb_strlen($words[$index]) <= 3) {
+                    $removed++;
                     continue;
                 }
 
+                // Remove a letter, at random, from the word.
                 $words[$index] = substr_replace($words[$index], '', rand(1, mb_strlen($words[$index]) - 2), 1);
                 $removed++;
 
-                if ($removed >= $numberToRemove) {
+                if ($removed == $numberToRemove) {
                     break;
                 }
             }

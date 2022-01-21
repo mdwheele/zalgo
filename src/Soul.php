@@ -61,7 +61,7 @@ final class Soul
     {
         $bool = false;
 
-        foreach (array_flatten($this->soul) as $c) {
+        foreach ($this->flatten($this->soul) as $c) {
             $bool = ($c == $character);
         }
 
@@ -70,6 +70,14 @@ final class Soul
 
     public function unleash()
     {
-        return array_flatten($this->soul);
+        return $this->flatten($this->soul);
     }
-} 
+
+    private function flatten($array)
+    {
+        $return = [];
+        array_walk_recursive($array, function($x) use (&$return) { $return[] = $x; });
+
+        return $return;
+    }
+}
